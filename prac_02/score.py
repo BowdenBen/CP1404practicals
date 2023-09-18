@@ -12,18 +12,18 @@ def main():
     # pick random score, print score and rating
     score = random.randint(1, 100)
     print(score)
-    score = score_rating(score)
-    print(score)
+    remark = score_rating(score)
+    print(remark)
 
 
-def score_rating(score):
+def score_rating(rate):
     # assign score rating
-    while score > 0:
-        if score < 50:
+    while rate > 0:
+        if rate < 50:
             return ("bad")
-        elif score < 90:
+        elif rate < 90:
             return ("passable")
-        elif score <= 100:
+        elif rate <= 100:
             return ("Excellent")
         else:
             return ("invalid Score")
