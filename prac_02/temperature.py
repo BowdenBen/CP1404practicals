@@ -5,14 +5,17 @@ convert to opposing measurement
 display conversion
 """
 def main():
+    # display menu and retrieve menu selection
     MENU = """C - Convert Celsius to Fahrenheit \nF - Convert Fahrenheit to Celsius \nQ - Quit"""
     print(MENU)
     choice = input(">>> ").upper()
 
     while choice != "Q":
+        # celsius_to_fahrenheit function
         if choice == "C":
             celsius_to_fahrenheit()
         elif choice == "F":
+        # fahrenheit_to_celsius function
             fahrenheit_to_celsius()
         else:
             print("Invalid option")
