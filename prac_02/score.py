@@ -9,7 +9,7 @@ import random
 random_number = 0
 
 def main():
-    # pick random score, print score and rating
+    """pick random score, print score and rating"""
     score = random.randint(1, 100)
     print(score)
     remark = score_rating(score)
@@ -17,7 +17,7 @@ def main():
 
 
 def score_rating(rate):
-    # assign score rating
+    """assign score rating"""
     while rate > 0:
         if rate < 50:
             return ("bad")

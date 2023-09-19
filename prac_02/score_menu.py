@@ -13,22 +13,22 @@ print score in stars
 """
 
 def main():
-    # setting variables
+    """ setting variables"""
     score = 0
     rated_score = 0
-    # display menu, request menu choice
+    """display menu, request menu choice"""
     print("(G)et a valid score\n (P)rint result\n (S)how stars\n (Q)uit")
     choice = input(">>>  ").upper()
-    # process choice
+    """process choice"""
     while choice != "Q":
         if choice == "G":
-            # score rating function
+            """score rating function"""
             score = int(input("What is your score? "))
             rated_score = valid_score(score)
         elif choice == "P":
             print(f"Your {score} is {rated_score} ")
         elif choice == "S":
-            # print star function
+            """print star function"""
             show_stars(score)
         else:
             print("Invalid choice")
@@ -36,7 +36,7 @@ def main():
     print("ThankYou")
 
 def valid_score(rate):
-    # assign score rating
+    """assign score rating"""
     while rate > 0:
         if rate < 50:
             return ("bad")
@@ -48,6 +48,7 @@ def valid_score(rate):
             return ("invalid Score")
 
 def show_stars(score, pen = "*"):
+    """ show score in stars"""
     print(score * pen)
 
 
