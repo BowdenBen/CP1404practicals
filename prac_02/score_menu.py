@@ -12,6 +12,7 @@ print score in stars
 
 """
 
+
 def main():
     """ setting variables"""
     score = 0
@@ -35,22 +36,23 @@ def main():
         choice = input(">>>  ").upper()
     print("ThankYou")
 
+
 def valid_score(rate):
     """assign score rating"""
     while rate > 0:
         if rate < 50:
-            return ("bad")
+            return "bad"
         elif rate < 90:
-            return ("passable")
+            return "passable"
         elif rate <= 100:
-            return ("Excellent")
+            return "Excellent"
         else:
-            return ("invalid Score")
+            return "invalid Score"
 
-def show_stars(score, pen = "*"):
+
+def show_stars(score, pen="*"):
     """ show score in stars"""
     print(score * pen)
-
 
 
 main()

@@ -4,14 +4,16 @@ get input for measurement
 convert to opposing measurement
 display conversion
 """
+MENU = """C - Convert Celsius to Fahrenheit \nF - Convert Fahrenheit to Celsius \nQ - Quit"""
+
+
 def main():
     """display menu and retrieve menu selection"""
-    MENU = """C - Convert Celsius to Fahrenheit \nF - Convert Fahrenheit to Celsius \nQ - Quit"""
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "C":
-            """celsius_to_fahrenheit function"""fahrenheit
+            """celsius_to_fahrenheit function"""
             celsius = float(input("Celsius: "))
             fahrenheit = celsius_to_fahrenheit(celsius)
             print(f"Result: {fahrenheit:.2f} F")
@@ -26,6 +28,7 @@ def main():
         choice = input(">>> ").upper()
     print("Thank you.")
 
+
 def celsius_to_fahrenheit(celsius):
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
@@ -34,7 +37,6 @@ def celsius_to_fahrenheit(celsius):
 def fahrenheit_to_celsius(fahrenheit):
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
-
 
 
 main()
