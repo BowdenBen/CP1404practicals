@@ -10,11 +10,14 @@ random_number = 0
 
 
 def main():
-    """pick random score, print score and rating"""
-    score = random.randint(1, 100)
-    print(score)
+    """ get score and random score and rate both"""
+    score = int(input("Enter score: "))
     remark = score_rating(score)
-    print(remark)
+    print(f"{score} is {remark}")
+    # pick random score, print score and rating
+    score = random.randint(1, 100)
+    remark = score_rating(score)
+    print(f"random {score} is {remark}")
 
 
 def score_rating(rate):
