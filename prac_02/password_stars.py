@@ -13,7 +13,7 @@ def get_password():
     """ get password """
     minimum_password_length = 8
     password = input("Please enter a password with a minimum 8 characters: ")
-    """ check if password meets requirements """
+    #  check if password meets requirements
     while len(password) < minimum_password_length:
         print("Password not long enough")
         password = input("Please enter a password with a minimum 8 characters: ")
