@@ -17,25 +17,35 @@ def main():
     """ setting variables"""
     score = 0
     rated_score = 0
-    """display menu, request menu choice"""
+    # display menu, request menu choice
     print("(G)et a valid score\n (P)rint result\n (S)how stars\n (Q)uit")
     choice = input(">>>  ").upper()
-    """process choice"""
+    # process choice
     while choice != "Q":
         if choice == "G":
-            """score rating function"""
-            score = int(input("What is your score? "))
-            rated_score = valid_score(score)
+            # score rating function
+            score = get_valid_score()
+            print(score)
         elif choice == "P":
+            # rate score
+            rated_score = valid_score(score)
             print(f"Your {score} is {rated_score} ")
         elif choice == "S":
-            """print star function"""
+            # print star function
             show_stars(score)
         else:
             print("Invalid choice")
         choice = input(">>>  ").upper()
     print("ThankYou")
 
+
+def get_valid_score():
+    """ check score is valid"""
+    score = int(input("Score:"))
+    while score < 0 or score >= 100:
+        print("error")
+        score = int(input("Score:"))
+    return score
 
 def valid_score(rate):
     """assign score rating"""
