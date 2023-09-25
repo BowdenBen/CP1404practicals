@@ -8,14 +8,16 @@ If the price rises above $1000, or falls below $0.01, the program should end.
 The price should be displayed to the nearest cent (e.g. $33.59, not $33.5918232901)
 """
 import random
-
-
+from typing import TextIO
 
 MAX_INCREASE = 0.175  # 17.5%
 MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1
 MAX_PRICE = 100.00
 INITIAL_PRICE = 10.0
+OUTPUT_FILE = 0
+
+out_file = open(OUTPUT_FILE, "w")
 
 price = INITIAL_PRICE
 print(f"Starting price ${price:,.2f}")
@@ -35,4 +37,6 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
 
     price *= (1 + price_change)
-    print(f"On day {number_of_days} the price is ${price:,.2f}")
+    print(f"On day {number_of_days} the price is ${price:,.2f}", file=out_file)
+
+out_file.close()
