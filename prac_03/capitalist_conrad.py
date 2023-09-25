@@ -17,10 +17,10 @@ MAX_PRICE = 100.00
 INITIAL_PRICE = 10.0
 OUTPUT_FILE = 0
 
-out_file = open(OUTPUT_FILE, "w")
 
+out_file = open("OUTPUT_FILE", "w")
 price = INITIAL_PRICE
-print(f"Starting price ${price:,.2f}")
+print(f"Starting price ${price:,.2f}", file=out_file)
 number_of_days = 0
 while MIN_PRICE <= price <= MAX_PRICE:
     number_of_days += 1
