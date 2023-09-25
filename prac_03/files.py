@@ -22,8 +22,10 @@ in_file.close()
 result = number1 + number2
 print(result)
 
+total = 0
 in_file = open("numbers.txt", "r")
 for line in in_file:
-    in_file.close()
-    result += int(line)
-    print(result)
+    total += int(line)
+in_file.close()
+print(total)
+
