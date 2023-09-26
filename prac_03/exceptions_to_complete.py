@@ -7,7 +7,7 @@ is_finished = False
 while not is_finished:
     try:
         result = int(input("Enter a valid integer: "))
-        is_finished = True # check integer if True
+        is_finished = True  # check integer if True
     except ValueError:  # Use ValueError to catch exception
         print("Please enter a valid integer.")
-print("Valid result is:", result)
+print("Valid result is:", result)  # no danger of result being undefined

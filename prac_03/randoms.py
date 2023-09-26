@@ -1,4 +1,3 @@
-
 # What did you see on line 1? 9, 10, 18, 19
 # What was the smallest number you could have seen, what was the largest? smallest = 5, largest = 20
 
@@ -13,4 +12,4 @@
 
 import random
 
-print(random.uniform(1,100))
+print(random.uniform(1, 100))
