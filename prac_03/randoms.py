@@ -10,6 +10,3 @@
 # What was the smallest number you could have seen, what was the largest? 2.5, 5.5
 
 
-import random
-
-print(random.uniform(1, 100))
