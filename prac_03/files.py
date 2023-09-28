@@ -1,5 +1,4 @@
 
-
 out_file = open("name.txt", "w")
 name = input("What is your name?: ")
 print(name, file=out_file)
@@ -11,12 +10,12 @@ text = in_file.read()
 in_file.close()
 print(f"Your name is {text}")
 
+total = 0
 in_file = open("numbers.txt", "r")
-number1 = int(in_file.readline())
-number2 = int(in_file.readline())
+for line in range(2):
+    total += int(in_file.readline())
 in_file.close()
-result = number1 + number2
-print(result)
+print(total)
 
 total = 0
 in_file = open("numbers.txt", "r")

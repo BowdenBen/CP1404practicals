@@ -15,7 +15,7 @@ print score in stars
 
 def main():
     """ setting variables"""
-    score = 0
+
     rated_score = 0
     # display menu, request menu choice
     print("(G)et a valid score\n (P)rint result\n (S)how stars\n (Q)uit")
