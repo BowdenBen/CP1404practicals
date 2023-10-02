@@ -8,7 +8,8 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    for parts in data:
+        print(f"{parts[0]} is taught by {parts[1]} to {parts[2]} students")
 
 
 def get_data():
