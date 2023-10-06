@@ -24,7 +24,7 @@ def main():
     print("Quick Picks:") # print heading
     for i in range(number_of_quickpicks): # for instance in range of how many quickpicks to be generated
         quick_pick = generate_quick_pick() # generate a quickpick per instance
-        print(" ".join("{:2}".format(number) for number in quick_pick))
+        print(" ".join(f"{number:2}" for number in quick_pick)) # right align each number in number list, join with a space inbetween, 1 number list per line
 
 def generate_quick_pick():
     numbers = [] # create list
