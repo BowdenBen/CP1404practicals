@@ -20,19 +20,19 @@ MAX_NUMBER = 45
 NUMBERS_PER_QUICKPICK = 6
 
 def main():
-    number_of_quickpicks = int(input("How many quick picks do you want to generate? "))
-    print("Quick Picks:")
-    for i in range(number_of_quickpicks):
-        quick_pick = generate_quick_pick()
+    number_of_quickpicks = int(input("How many quick picks do you want to generate? ")) # get userinput
+    print("Quick Picks:") # print heading
+    for i in range(number_of_quickpicks): # for instance in range of how many quickpicks to be generated
+        quick_pick = generate_quick_pick() # generate a quickpick per instance
         print(" ".join("{:2}".format(number) for number in quick_pick))
 
 def generate_quick_pick():
     numbers = [] # create list
-    while len(numbers) < NUMBERS_PER_QUICKPICK:
-        number = random.randint(MIN_NUMBER, MAX_NUMBER)
-        if number not in numbers:
-            numbers.append(number)
-    numbers.sort()
-    return numbers
+    while len(numbers) < NUMBERS_PER_QUICKPICK: # as long as there is less then 6 numbers, continue generating numbers
+        number = random.randint(MIN_NUMBER, MAX_NUMBER) # generate numbers between 1 and 45 inclusive
+        if number not in numbers: # check the number hasn't already been generated to avoid double ups
+            numbers.append(number) # add number to list
+    numbers.sort() # now list is full, sort from low to high
+    return numbers # return the list to the main function
 
 main()
