@@ -17,19 +17,22 @@ import random
 
 MIN_NUMBER = 1
 MAX_NUMBER = 45
-NUMBERS_PER_LINE = 6
-NUM_QUICK_PICKS = int(input("How many quick picks do you want to generate? "))
+NUMBERS_PER_QUICKPICK = 6
+
+def main():
+    number_of_quickpicks = int(input("How many quick picks do you want to generate? "))
+    print("Quick Picks:")
+    for i in range(number_of_quickpicks):
+        quick_pick = generate_quick_pick()
+        print(" ".join("{:2}".format(number) for number in quick_pick))
 
 def generate_quick_pick():
-    numbers = []
-    while len(numbers) < NUMBERS_PER_LINE:
+    numbers = [] # create list
+    while len(numbers) < NUMBERS_PER_QUICKPICK:
         number = random.randint(MIN_NUMBER, MAX_NUMBER)
         if number not in numbers:
             numbers.append(number)
     numbers.sort()
     return numbers
 
-print("Quick Picks:")
-for _ in range(NUM_QUICK_PICKS):
-    quick_pick = generate_quick_pick()
-    print(" ".join("{:2}".format(number) for number in quick_pick))
+main()
