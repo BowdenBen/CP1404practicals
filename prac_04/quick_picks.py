@@ -12,25 +12,24 @@ How many quick picks? 5
 13 21 28 29 42 43
  3  4 10 11 32 44
 """
+
 import random
 
-# Constants
 MIN_NUMBER = 1
 MAX_NUMBER = 45
-QUICK_PICK_NUMBERS = 6
+NUMBERS_PER_LINE = 6
+NUM_QUICK_PICKS = int(input("How many quick picks do you want to generate? "))
 
-
-def main():
-    quickpicks()
-
-
-def quickpicks():
-    try:
-        number_of_quickpicks = int(input("How many quick picks do you want to generate? "))
-    except ValueError:
-        print("Invalid input. Please enter a valid number.")
-    return number_of_quickpicks
-
-def quickpick_numbers():
-    numbers = sorted(random.randint(MIN_NUMBER, MAX_NUMBER + 1) for number in range(1, QUICK_PICK_NUMBERS + 1))
+def generate_quick_pick():
+    numbers = []
+    while len(numbers) < NUMBERS_PER_LINE:
+        number = random.randint(MIN_NUMBER, MAX_NUMBER)
+        if number not in numbers:
+            numbers.append(number)
+    numbers.sort()
     return numbers
+
+print("Quick Picks:")
+for _ in range(NUM_QUICK_PICKS):
+    quick_pick = generate_quick_pick()
+    print(" ".join("{:2}".format(number) for number in quick_pick))
