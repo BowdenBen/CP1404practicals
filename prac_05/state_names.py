@@ -8,12 +8,16 @@ File needs reformatting
 CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Territory", "WA": "Western Australia",
                 "ACT": "Australian Capital Territory", "VIC": "Victoria", "TAS": "Tasmania"}
 print(CODE_TO_NAME)
+for state_code, state_name in CODE_TO_NAME.items(): # loop that prints all the states and names neatly lined up with string formattin
+    print(f"{state_code:3} is {state_name}")
 
 state_code = input("Enter short state: ")
 state_code = state_code.upper() # state_code can now accept upper and lower case input
 while state_code != "":
-    if state_code in CODE_TO_NAME:
+    try:
+        state_name = CODE_TO_NAME[state_code]
         print(state_code, "is", CODE_TO_NAME[state_code])
-    else:
+    except KeyError:
         print("Invalid short state")
     state_code = input("Enter short state: ")
+    state_code = state_code.upper()
