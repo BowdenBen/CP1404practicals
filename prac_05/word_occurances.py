@@ -13,4 +13,4 @@ word_to_count = {}      # set up dictionary
 for word in text:       # for each word in the list text
     word_to_count[word] = word_to_count.get(word, 0) + 1    # return a value for key (list), if no key set to 0, add 1
 for word, count in word_to_count.items():   # set up variables for dictionary {"word": int(count)) in "for" loop
-    print(f"{word}: {count}")       # print out each loop
+    print(f"{word}: {int(count)}")       # print out each loop
