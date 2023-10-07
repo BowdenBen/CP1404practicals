@@ -5,10 +5,10 @@ COLOUR_TO_CODE = {"absolute zero": "0048ba", "acid Green": "b0bf1a", "aliceBlue"
                   "bright navy blue": "1974d2", "bright turquoise": "08e8de"}
 
 colour = input("Please enter colour you want a code for: ")
-colour = colour.lower()  # state_code can now accept upper and lower case input
-while colour != "":  # while state code doesn't equal nothing, allows to quit out of loop by hitting return
+colour = colour.lower()  # colour can now accept upper and lower case input
+while colour != "":  # while something has been entered, allows to quit out of loop by hitting return
     try:
-        print(colour, "is", COLOUR_TO_CODE[colour])  # as long as the key on the list is entered, print  "key" is "key value"
+        print(colour, "is", COLOUR_TO_CODE[colour])  # if key entered is on the list, print  "key" is "key value"
     except KeyError:  # if key isn't on the list
         print("Invalid colour")
     colour = input("Please enter colour you want a code for: ")
