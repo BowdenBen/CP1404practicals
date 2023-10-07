@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 60 minutes
-Actual:    minutes
+Actual:   45 minutes
 
 Write a program to count the occurrences of words in a string. The program should ask the user for a string, then print
 the counts of how many of each word are in the string.
