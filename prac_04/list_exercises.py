@@ -1,15 +1,17 @@
+"""
+
+"""
 from statistics import mean
 
-data = []
+data = [] # create list
 
-for i in range(5):
-        while True:
-                try:
-                        number = float(input(f"Please enter a number {i + 1} "))
-                        break
-                except ValueError:
-                        print("That is an invalid number")
-        data.append(number)
+while len(data) < 5:  # continue asking until 5 valid floats are entered
+    try:
+        number = float(input(f"Please enter a number {len(data) + 1}: "))
+        data.append(number)     # add number to list
+    except ValueError:          # check that float is entered
+        print("Invalid input. Please enter a valid number.")
+
 print(f"The first number is {data[0]}")
 print(f"The last number is {data[4]}")
 print(f"The smallest number is {min(data)}")
