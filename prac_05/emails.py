@@ -10,7 +10,15 @@ Actual:    150 minutes
 email_to_name = {}
 
 email = input("Please enter your email address: ")
-while email != "":
+while True:
+    email = input("Please enter your email address: ")
+    if "@" in email:
+        valid_email = email
+        break  # Exit the loop if the email is valid
+    else:
+        print("Invalid email address!")
+email = valid_email
+while email != "":      # return exits program
     username, domain = email.split("@")
     if "." in username:
         first_name, last_name = username.split(".")
@@ -30,4 +38,5 @@ while email != "":
             email_to_name[email] = username
     print(email_to_name)
     email = input("Please enter your email address: ")
+email = input("Please enter your email address: ")
 print("Thankyou")
