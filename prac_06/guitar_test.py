@@ -9,6 +9,10 @@ def main():
     ibanez = Guitar("Ibanez RGA42FM", 2016, 750)
     print(gibson)
     print(ibanez)
+    print(f"{gibson.name} is {gibson.get_age()} years old")
+    print(f"{ibanez.name} is {ibanez.get_age()} years old")
+    print(f"{gibson.name} is {gibson.is_vintage()} ")
+    print(f"{ibanez.name} is {ibanez.is_vintage()} ")
 
 if __name__ == "__main__":
     main()
