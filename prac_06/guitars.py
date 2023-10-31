@@ -5,6 +5,7 @@ actual time: 5 hours
 """
 from guitar import Guitar
 
+
 def main():
     """Get a list of guitars and print them out"""
     guitars = guitar_list()

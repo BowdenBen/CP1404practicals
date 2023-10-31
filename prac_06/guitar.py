@@ -16,7 +16,7 @@ class Guitar:
         return f"The {self.name}, first made in {self.year}, and costs ${self.cost:.2f}"
 
     def __repr__(self):
-        """Return list of variables as designated string"""
+        """Return list of variables as designated string """
         return str(self)
 
     def get_age(self):
