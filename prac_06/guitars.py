@@ -1,34 +1,39 @@
-
+"""
+Write program to build a list of guitars, and signify whether they are vintage or not
+time estimate: 2 hours
+actual time: 5 hours
+"""
 from guitar import Guitar
 
 def main():
-    """Control all functions, use class function to process list"""
-    guitar_list = []
-    new_guitar = get_guitar()
-    guitar_list.append(new_guitar)
-def get_guitar():
-    """Get user input of list of guitars(lists), include year, price"""
-    name = input("Please enter the guitar's name:  ")
-    while name != "":
-        try:
-            year = int(input("Please enter the year the guitar was made:   "))
-            while year > 0:
-                name.append(yeay)
-            else:
-                year = int(input("That is an incorrect year. Please enter the year the guitar was made:   "))
-        except ValueError:
-            year = int(input("That is not a number. Please enter the year the guitar was made:   "))
-        try:
-            cost = float(input("How much did the guitar cost:   $"))
-            while cost > 0:
-                name.append(cost)
-            else:
-                cost = float(input("Please enter the correct amount. How much did the guitar cost:   $"))
-        except ValueError:
-            cost = float(input("That is not a price. How much did the guitar cost:   $"))
-    else:
-        print("Thank you")
+    """Get a list of guitars and print them out"""
+    guitars = guitar_list()
 
+    for i, guitar in enumerate(guitars, 1):
+        vintage = guitar.is_vintage()
+        print(f"Guitar {i}: {guitar.name:>15} ({guitar.year:>4}), costs ${guitar.cost:>6,.2f}  (Considered {vintage})")
+
+
+def guitar_list():
+    """Make guitar list, populate list of lists with inputs, error check"""
+    guitars = []
+    print("Please enter the Guitars name, year of manufacture and cost. (Press enter to finish)")
+    while True:
+        name = input("Name: ")
+        if not name:
+            break
+        try:
+            year = int(input("Year: "))
+        except ValueError:
+            print("Invalid input. Please enter valid year.")
+        try:
+            cost = float(input("Cost: $"))
+        except ValueError:
+            print("Invalid input. Please enter valid cost.")
+        guitars.append(Guitar(name, year, cost))
+        print(f"{name} ({year}) : ${cost:.2f} added.")
+        print(guitars)
+    return guitars
 
 
 if __name__ == "__main__":
