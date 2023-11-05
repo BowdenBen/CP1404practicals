@@ -18,7 +18,7 @@ with open('guitars.csv', newline='') as csvfile:
         year = int(year)
         cost = float(cost)
         guitars.append(Guitar(name, year, cost))
-
+guitars.sort()
 print("**Guitars**\n")
 for guitar in guitars:
     print(guitar)
