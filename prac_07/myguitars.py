@@ -10,6 +10,14 @@ from guitar import Guitar
 def main():
     """Read guitar data from the CSV file, use Guitar class to sort"""
     guitars = []
+    read_guitar_csv(guitars)
+    guitars.sort()      # sort by year made
+    print("**Guitars**\n")
+    for guitar in guitars:
+        print(guitar)
+
+
+def read_guitar_csv(guitars):
     with open('guitars.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
         next(reader)  # Skip header row
@@ -18,10 +26,7 @@ def main():
             year = int(year)
             cost = float(cost)
             guitars.append(Guitar(name, year, cost))
-    guitars.sort()      # sort by year made
-    print("**Guitars**\n")
-    for guitar in guitars:
-        print(guitar)
+
 
 def get_new_guitar():
     """Prompt user for new guitar details and return a Guitar object."""
