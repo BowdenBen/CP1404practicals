@@ -7,6 +7,7 @@ Now sort the list by year (oldest to newest) and display them in sorted order
 import csv
 from guitar import Guitar
 
+
 def main():
     """Read guitar data from the CSV file, use Guitar class to sort"""
     guitars = []
@@ -23,6 +24,12 @@ def main():
     print("**Guitars**\n")
     for guitar in guitars:
         print(guitar)
+    # Write all guitars to guitars.csv
+    with open('guitars.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Name', 'Year', 'Cost'])
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
 
 
 def read_guitar_csv(guitars):
