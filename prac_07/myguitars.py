@@ -11,6 +11,14 @@ def main():
     """Read guitar data from the CSV file, use Guitar class to sort"""
     guitars = []
     read_guitar_csv(guitars)
+    add_new_guitar = input("Add another guitar? (yes/no): ").lower()
+    while add_new_guitar != "no":
+        new_guitar = get_new_guitar()
+        guitars.append(new_guitar)
+        add_new_guitar = input("Add another guitar? (yes/no): ").lower()
+    else:
+        print("Thank you")
+
     guitars.sort()      # sort by year made
     print("**Guitars**\n")
     for guitar in guitars:
