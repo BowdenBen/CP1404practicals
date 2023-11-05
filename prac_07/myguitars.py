@@ -24,7 +24,11 @@ def main():
     print("**Guitars**\n")
     for guitar in guitars:
         print(guitar)
-    # Write all guitars to guitars.csv
+    update_guitars_file(guitars)
+
+
+def update_guitars_file(guitars):
+    """Write all guitars to guitars.csv"""
     with open('guitars.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['Name', 'Year', 'Cost'])
