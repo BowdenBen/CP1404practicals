@@ -37,6 +37,7 @@ def update_guitars_file(guitars):
 
 
 def read_guitar_csv(guitars):
+    """Read guitar list from csv file"""
     with open('guitars.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
         next(reader)  # Skip header row
