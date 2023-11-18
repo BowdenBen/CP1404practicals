@@ -2,5 +2,21 @@ BoxLayout:
     orientation: "vertical" # 3 main boxes
     BoxLayout:
         orientation: "horizontal"   # 2 boxes nested in top main box
+        TextInput:
+            id: input_miles
+            font_size: 52
+            text: " "
         BoxLayout:
             orientation: "vertical" # 2 boxes nested in right of top box
+            Button:
+                text: "Up"
+            Button:
+                text: "Down"
+    Button: # press to convewt entered input miles to kilometre output
+        text: "Convert miles to km"
+        on_press:
+    Label:
+        id: kilometre_conversion
+        font_size: 52
+        text: " "
+        color: (1, 1, .6, 1,)
