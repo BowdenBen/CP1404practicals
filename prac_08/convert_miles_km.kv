@@ -1,22 +1,30 @@
 BoxLayout:
-    orientation: "vertical" # 3 main boxes
+    orientation: "vertical"
     BoxLayout:
-        orientation: "horizontal"   # 2 boxes nested in top main box
+        orientation: "horizontal"
         TextInput:
-            id: input_miles
+            id: input_distance
             text: "34"
-            font_size: 52
+            font_size: 48
+            size_hint_x: 0.8
+            multiline: False
+            on_text_validate: app.convert()
         BoxLayout:
-            orientation: "vertical" # 2 boxes nested in right of top box
+            size_hint_x: 0.2
+            orientation: 'vertical'
             Button:
                 text: "Up"
+                font_size: 48
+                on_press: app.handle_increment(1)
             Button:
                 text: "Down"
-    Button: # press to convewt entered input miles to kilometre output
+                font_size: 48
+                on_press: app.handle_increment(-1)
+    Button:
         text: "Convert miles to km"
-        on_press: app.handle_calculation()
+        font_size: 48
+        on_press: app.convert()
     Label:
-        id: output_kilometre
-        font_size: 52
-        text: "54.71756"
-        color: (1, 1, .6, 1,)
+        text: app.output_distance
+        font_size: 48
+        color: (1, 1, 0, 1)
