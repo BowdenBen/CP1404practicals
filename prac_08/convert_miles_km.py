@@ -25,9 +25,9 @@ class ConvertMilesKmApp(App):
         """ handle the calculation"""
         try:
             miles_input = float(self.root.ids.input_miles.text)
-            current_input = miles_input * MILES_KM_CONVERSION
-            self.root.ids.output_kilometre = str(current_input)
-        except ValueError:
+            converted_input = miles_input * MILES_KM_CONVERSION
+            self.root.ids.output_kilometre.text = str(converted_input)
+        except ValueError:  # won't action if number isn't entered
             pass
 
 

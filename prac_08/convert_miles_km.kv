@@ -4,8 +4,8 @@ BoxLayout:
         orientation: "horizontal"   # 2 boxes nested in top main box
         TextInput:
             id: input_miles
-            font_size: 52
             text: "34"
+            font_size: 52
         BoxLayout:
             orientation: "vertical" # 2 boxes nested in right of top box
             Button:
@@ -14,7 +14,7 @@ BoxLayout:
                 text: "Down"
     Button: # press to convewt entered input miles to kilometre output
         text: "Convert miles to km"
-        on_press:
+        on_press: app.handle_calculation()
     Label:
         id: output_kilometre
         font_size: 52
