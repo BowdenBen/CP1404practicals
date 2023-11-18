@@ -10,7 +10,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
-MILES_KM_CONVERSION_FACTOR = 1.60934
+MILES_KM_CONVERSION = 1.60934
 
 
 class ConvertMilesKm(App):
@@ -38,7 +38,7 @@ class ConvertMilesKm(App):
         """Convert from miles to kilometers using MILES_KM_CONVERSION_FACTOR."""
         try:
             current_input = float(self.root.ids.input_distance.text)
-            current_input *= MILES_KM_CONVERSION_FACTOR
+            current_input *= MILES_KM_CONVERSION
             self.output_distance = str(current_input)
         except ValueError:
             self.output_distance = '0.0'
