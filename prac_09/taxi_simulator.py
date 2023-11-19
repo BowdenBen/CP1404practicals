@@ -48,4 +48,10 @@ def drive_taxi(current_taxi, bill_to_date):
     return current_fare + bill_to_date
 
 
-def choose_taxi():
+def choose_taxi(taxis):
+    """ Get a valid taxi from Taxi's."""
+    is_valid_input = False
+    print("Available Taxi's are:")
+    for i, taxi in enumerate(taxis):        # print Taxi names from list
+        print(f"{i} - {taxi}")
+    return
