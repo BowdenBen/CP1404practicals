@@ -21,12 +21,14 @@ def main():
         if choice == 'd':
             if current_taxi is None:
                 print("You need to choose a taxi before you can drive")
+            else:
+                bill_to_date = drive_taxi(current_taxi, bill_to_date)
         elif choice == 'c':
             current_taxi = taxis[choose_taxi(taxis)]
         elif choice != 'q':
             print("Invalid option")
-
-
+        print(MENU)
+        choice = input(">>> ").lower()
 def drive_taxi():
 
 
