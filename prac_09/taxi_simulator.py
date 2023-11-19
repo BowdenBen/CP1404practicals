@@ -15,3 +15,11 @@ def main():
     print("Let's drive!")
     print(MENU)
     choice = input(">>> ").lower()
+    while choice != 'q':
+
+
+def drive_taxi():
+
+
+
+def choose_taxi():
