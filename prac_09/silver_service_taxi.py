@@ -17,3 +17,8 @@ class SilverServiceTaxi(Taxi):
     def get_fare(self):
         """Override get_fare from Taxi Class to add a premium flagfall"""
         return super().get_fare() + self.flagfall
+
+    def __str__(self):
+        """Return string of objects from all classes"""
+        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
+
