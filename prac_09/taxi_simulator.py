@@ -35,10 +35,16 @@ def drive_taxi():
     while not is_valid_input:
         try:
             distance = int(input("Drive distance? "))
+            if 0 > distance:
+                distance = int(input("Invalid. Drive distance? "))
+            else:
+                is_valid_input = True
         except ValueError:
             print("Invalid distance.")
-
-
+    current_taxi.start_fare()
+    current_taxi.drive(distance)
+    current_fare = current_taxi.get_fare()
+    return current_fare + bill_to_date
 
 
 def choose_taxi():
