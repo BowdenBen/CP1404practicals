@@ -50,8 +50,21 @@ def drive_taxi(current_taxi, bill_to_date):
 
 def choose_taxi(taxis):
     """ Get a valid taxi from Taxi's."""
-    is_valid_input = False
+
     print("Available Taxi's are:")
     for i, taxi in enumerate(taxis):        # print Taxi names from list
         print(f"{i} - {taxi}")
-    return
+    is_valid_input = False
+    while not is_valid_input:
+        try:
+            taxi_index = int(input("Please choose a taxi: "))
+            if 0 > taxi_index or taxi_index >= len(taxis):
+                taxi_index = int(input("Incorrect input. Please choose a taxi: "))
+            else:
+                is_valid_input = True
+        except ValueError:
+            print("Invalid taxi choice")
+    return taxi_index
+
+
+main()
