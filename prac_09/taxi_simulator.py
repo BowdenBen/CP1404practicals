@@ -12,6 +12,7 @@ MENU = """q)uit, c)hoose taxi, d)rive"""
 def main():
     """Get an input choice from MENU"""
     current_taxi = None
+    taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
 
     print("Let's drive!")
     print(MENU)
@@ -20,6 +21,10 @@ def main():
         if choice == 'd':
             if current_taxi is None:
                 print("You need to choose a taxi before you can drive")
+        elif choice == 'c':
+            current_taxi = taxis[choose_taxi(taxis)]
+        elif choice != 'q':
+            print("Invalid option")
 
 
 def drive_taxi():
