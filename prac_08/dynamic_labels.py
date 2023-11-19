@@ -11,6 +11,7 @@ from kivy.uix.label import Label
 
 NAMES = ["Gregory Peck", "Dr NoGrundles", "Lenny"]
 
+
 class DynamicLabelsApp(App):
     """ Create dynamic labels in a GUI from a list of NAMES """
 
@@ -18,7 +19,9 @@ class DynamicLabelsApp(App):
         """Build the Kivy GUI."""
         self.title = "Dynamic Labels"
         self.root = Builder.load_file('dynamic_labels.kv')
-        label = Label(text=NAMES, font_size='52')
+        for name in NAMES:  # for each name in list, display name, font size and colour per label
+            label = Label(text=name, font_size='52', color=(1, 0.5, 0.7, 1))
+            self.root.ids.main.add_widget(label)
         return self.root
 
 
