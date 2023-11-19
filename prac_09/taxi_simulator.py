@@ -54,7 +54,7 @@ def choose_taxi(taxis):
 
     print("Available Taxi's are:")
     for i, taxi in enumerate(taxis):        # print Taxi names from list
-        print(f"{i} - {taxi}")
+        print(f"{i + 1} - {taxi}")
     is_valid_input = False
     while not is_valid_input:
         try:
