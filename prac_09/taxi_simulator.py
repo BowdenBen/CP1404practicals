@@ -13,6 +13,7 @@ def main():
     """Get an input choice from MENU"""
     current_taxi = None
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
+    bill_to_date = 0
 
     print("Let's drive!")
     print(MENU)
