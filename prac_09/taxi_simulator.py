@@ -29,7 +29,7 @@ def main():
             print("Invalid option")
         print(MENU)
         choice = input(">>> ").lower()
-def drive_taxi():
+def drive_taxi(current_taxi, bill_to_date):
     """ Handle the fare calculation in relation to drive distance"""
     is_valid_input = False      # set in put to false for error checking
     while not is_valid_input:
@@ -44,6 +44,7 @@ def drive_taxi():
     current_taxi.start_fare()
     current_taxi.drive(distance)
     current_fare = current_taxi.get_fare()
+    print(f"Your {current_taxi.name} trip has a total cost of ${current_fare:.2f}")
     return current_fare + bill_to_date
 
 
