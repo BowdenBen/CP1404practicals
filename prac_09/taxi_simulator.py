@@ -30,6 +30,14 @@ def main():
         print(MENU)
         choice = input(">>> ").lower()
 def drive_taxi():
+    """ Handle the fare calculation in relation to drive distance"""
+    is_valid_input = False      # set in put to false for error checking
+    while not is_valid_input:
+        try:
+            distance = int(input("Drive distance? "))
+        except ValueError:
+            print("Invalid distance.")
+
 
 
 
